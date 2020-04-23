@@ -1,5 +1,5 @@
 db.sqlite3
-todoapp/__pycache__/settings.cpython-38.pyc
-todos/__pycache__/models.cpython-38.pyc
-todos/__pycache__/views.cpython-38.pyc
-db.sqlite3
+todoapp/__pycache__/*.*
+todos/__pycache__/*.*
+todos/__pycache__/*.*
+

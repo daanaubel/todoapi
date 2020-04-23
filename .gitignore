@@ -1,5 +1,2 @@
 db.sqlite3
-todoapp/__pycache__/*.*
-todos/__pycache__/*.*
-todos/__pycache__/*.*
-
+*.pyc

@@ -3,6 +3,7 @@ from rest_framework import viewsets, permissions, status
 from .serializers import TodoSerializer
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from django.db.models import Q
 
 
 class TodoViewSet(viewsets.ModelViewSet):
@@ -21,6 +22,7 @@ class TodoViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['delete'])
     def completed(self, request):
-        completed_todos = Todo.objects.filter(completed=True)
+        completed_todos = Todo.objects.filter(
+            Q(completed=True) | Q(parentTodo__completed=True))
         completed_todos.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
